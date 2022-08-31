@@ -17,5 +17,5 @@ bool canJump(int* nums, int numsSize)
         index++;
     }
     
-    return (index >= numsSize - 1);
+    return (max_reach >= numsSize - 1);
 }
