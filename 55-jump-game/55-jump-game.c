@@ -6,6 +6,7 @@ bool canJump(int* nums, int numsSize)
     
     while(index < numsSize)
     {
+        //Calculating max reach for the given index
         if(index + nums[index] > max_reach)
         {
             max_reach = index + nums[index];
