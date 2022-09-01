@@ -12,7 +12,6 @@ int* selfDividingNumbers(int left, int right, int* returnSize)
     {
         while(num)
         {
-            //num_copy = num;
             digit = num % 10;
             num /= 10;
             
@@ -30,8 +29,6 @@ int* selfDividingNumbers(int left, int right, int* returnSize)
         }
         num_copy++;
         num = num_copy;
-        digit = num_copy;
-        //index++;
     }
     *returnSize = index;
     
