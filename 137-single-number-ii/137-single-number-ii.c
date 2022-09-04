@@ -6,12 +6,17 @@ int singleNumber(int* nums, int numsSize)
     
     while(index < numsSize)
     {
+        //Counting bits occurring twice or thrice
         twice |= (once & nums[index]);
+        //Counting bits occurring once or thrice
         once ^= nums[index];
-        
+        //Counting bits occurring thrice
         thrice = once & twice;
+        //Eliminating bits occurring thrice from once
         once &= ~thrice;
+        //Eliminating bits occurring thrice from twice
         twice &= ~thrice;
+        //Incrementing the index
         index++;
     }
     
