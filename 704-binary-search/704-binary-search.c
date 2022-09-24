@@ -9,11 +9,11 @@ int search(int* nums, int numsSize, int target)
     {
         mid = start + (end - start) / 2;
         
-        if(nums[mid] > target)
+        if(target < nums[mid])
         {
             end = mid - 1;
         }
-        else if(nums[mid] < target)
+        else if(target > nums[mid])
         {
             start = mid + 1;
         }
