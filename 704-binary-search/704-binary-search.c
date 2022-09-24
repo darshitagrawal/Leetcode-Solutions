@@ -5,7 +5,7 @@ int search(int* nums, int numsSize, int target)
     int start = 0, end = numsSize - 1;
     int mid = 0;
     
-    while(start <= end)
+    while(end >= start)
     {
         mid = start + (end - start) / 2;
         
