@@ -2,16 +2,21 @@
 
 char nextGreatestLetter(char* letters, int lettersSize, char target)
 {
-    int index = 0;
+    int start = 0, end = lettersSize - 1; 
+    int mid = 0;
     
-    while(index < lettersSize)
+    while(start <= end)
     {
-        if(letters[index] > target)
+        mid = start + (end - start) / 2;
+        if(letters[mid] > target)
         {
-            return letters[index];
+            end = mid - 1;
         }
-        index++;
+        else
+        {
+            start = mid + 1;
+        }
     }
     
-    return letters[0];
+    return letters[start % lettersSize];
 }
