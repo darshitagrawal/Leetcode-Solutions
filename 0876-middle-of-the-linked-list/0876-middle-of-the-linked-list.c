@@ -7,27 +7,14 @@
  */
 struct ListNode* middleNode(struct ListNode* head)
 {
-    uint8_t count = 0, middle = 0;
-    struct ListNode *DummyNode = head;
+    struct ListNode *fastptr = head;
+    struct ListNode *slowptr = head;
     
-    while(DummyNode != NULL)
+    while(fastptr != NULL && fastptr->next != NULL)
     {
-        DummyNode = DummyNode->next;
-        count++;
+        slowptr = slowptr->next;
+        fastptr = fastptr->next->next;
     }
     
-    DummyNode = head;
-    
-    while(DummyNode != NULL)
-    {
-        if(middle == count / 2)
-        {
-            break;
-        }
-        
-        middle++;
-        DummyNode = DummyNode->next;
-    }
-    
-    return DummyNode;        
+    return slowptr;
 }
