@@ -4,6 +4,7 @@ public:
     {
         int size = nums.size();
         int index = 0, sub_index = 0;
+        vector <int> result;
         
         while(index < size)
         {
@@ -12,7 +13,9 @@ public:
             {
                 if(nums[index] + nums[sub_index] == target)
                 {
-                    return {index, sub_index};
+                    result.push_back(index);
+                    result.push_back(sub_index);
+                    return result;
                 }
                 sub_index++;
             }
