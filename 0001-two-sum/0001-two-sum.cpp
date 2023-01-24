@@ -4,7 +4,7 @@ public:
     {
         int size = nums.size();
         int index = 0, sub_index = 0;
-        vector <int> result;
+        vector<int> result;
         
         while(index < size)
         {
