@@ -12,15 +12,15 @@ bool hasCycle(struct ListNode *head)
         return false;
     }
     
-    struct ListNode *fastptr = head;
-    struct ListNode *slowptr = head;
+    struct ListNode *fastPtr = head;
+    struct ListNode *slowPtr = head;
     
-    while(fastptr != NULL && fastptr->next != NULL)
+    while(fastPtr != NULL && fastPtr->next != NULL)
     {
-        slowptr = slowptr->next;
-        fastptr = fastptr->next->next;
+        fastPtr = fastPtr->next->next;
+        slowPtr = slowPtr->next;
         
-        if(fastptr == slowptr)
+        if(fastPtr == slowPtr)
         {
             return true;
         }
