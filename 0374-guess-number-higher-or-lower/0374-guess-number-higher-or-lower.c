@@ -15,11 +15,12 @@ int guessNumber(int n)
     while(low <= high)
     {
         mid = low + (high - low) / 2;
+        
         result = guess(mid);
         
         if(!result)
         {
-            return mid;
+            break;
         }
         else if(result == -1)
         {
@@ -31,5 +32,5 @@ int guessNumber(int n)
         }
     }
     
-    return -1;
+    return mid;
 }
