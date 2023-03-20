@@ -9,8 +9,6 @@ int countPrimes(int n)
     int upper = 2, lower = 0, result = 0;
     int sqrt_n = sqrt(n);
     
-    memset(isPrime, 1, sizeof(isPrime));
-    
     for(upper = 2; upper <= sqrt_n; upper++)
     {
         if(!isPrime[upper])
