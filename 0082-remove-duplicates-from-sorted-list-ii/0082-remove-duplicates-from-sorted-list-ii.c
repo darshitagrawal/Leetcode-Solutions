@@ -7,33 +7,32 @@
  */
 
 
-struct ListNode* deleteDuplicates(struct ListNode* head) {
-    // sentinel
-    struct ListNode* sentinel = (struct ListNode*) malloc(sizeof(struct ListNode));
-    sentinel->val = 0;
+struct ListNode* deleteDuplicates(struct ListNode* head)
+{
+    struct ListNode *sentinel = (struct ListNode*)calloc(1, sizeof(struct ListNode));
+    
     sentinel->next = head;
-
-    // predecessor = the last node 
-    // before the sublist of duplicates
-    struct ListNode* pred = sentinel;
-        
-    while (head != NULL) {
-        // if it's a beginning of duplicates sublist 
-        // skip all duplicates
-        if (head->next != NULL && head->val == head->next->val) {
-            // move till the end of duplicates sublist
-            while (head->next != NULL && head->val == head->next->val) {
-                head = head->next;    
+    
+    struct ListNode *predNode = sentinel;
+    
+    while(head != NULL)
+    {
+        if(head->next != NULL && head->val == head->next->val)
+        {
+            while(head->next != NULL && head->val == head->next->val)
+            {
+                head = head->next;
             }
-            // skip all duplicates
-            pred->next = head->next;     
-        // otherwise, move predecessor
-        } else {
-            pred = pred->next;    
+            
+            predNode->next = head->next;
         }
-                
-        // move forward
-        head = head->next;    
-    }  
+        else
+        {
+            predNode = predNode->next;
+        }
+        
+        head = head->next;
+    }
+    
     return sentinel->next;
 }
