@@ -9,24 +9,29 @@
 
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n)
 {
-    struct ListNode dummyNode = {0};
-    dummyNode.next = head;
-    struct ListNode *first = &dummyNode, *second = &dummyNode;
-    int count = 1;
+    struct ListNode *dummyNode = (struct ListNode*)calloc(1, sizeof(struct ListNode));
+    int length = 0;
+
+    dummyNode->next = head;
     
-    while(count <= n + 1)
+    struct ListNode *first = head;
+    
+    while(first!= NULL)
     {
         first = first->next;
-        count++;
+        length++;
     }
     
-    while(first != NULL)
+    length -= n;
+    first = dummyNode;
+    
+    while(length > 0)
     {
+        length--;
         first = first->next;
-        second = second->next;
     }
     
-    second->next = second->next->next;
+    first->next = first->next->next;
     
-    return dummyNode.next;
+    return dummyNode->next;  
 }
