@@ -7,8 +7,6 @@ int* evenOddBit(int n, int* returnSize)
     int count = 0, even = 0, odd = 0;
     int numbits = (int)(log(n) / log(2)) + 1;
     
-    printf("Num of bits = %d", numbits);
-    
     while(count < numbits)
     {
         if(n & 1)
