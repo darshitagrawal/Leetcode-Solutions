@@ -4,7 +4,7 @@
 int* evenOddBit(int n, int* returnSize)
 {
     int *result = (int*)calloc(2, sizeof(int));
-    int count = 0, even = 0, odd = 0;
+    int count = 0;
     int numbits = (int)(log(n) / log(2)) + 1;
     
     while(count < numbits)
@@ -13,20 +13,17 @@ int* evenOddBit(int n, int* returnSize)
         {
             if(count % 2)
             {
-                even++;
+                result[1]++;
             }
             else
             {
-                odd++;
+                result[0]++;
             }
         }
         
         n >>=1;
         count++;
     }
-    
-    result[0] = odd;
-    result[1] = even;
     
     *returnSize = 2;
     
