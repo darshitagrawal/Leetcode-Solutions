@@ -23,7 +23,6 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
             {
                 head = head->next;
             }
-            
             predNode->next = head->next;
         }
         else
