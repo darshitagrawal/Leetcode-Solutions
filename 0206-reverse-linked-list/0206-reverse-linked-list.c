@@ -11,10 +11,11 @@ struct ListNode* reverseList(struct ListNode* head)
 {
     struct ListNode *currNode = head;
     struct ListNode *prevNode = NULL;
+    struct ListNode *nextNode = NULL;
     
-    while(currNode)
+    while(currNode != NULL)
     {
-        struct ListNode *nextNode = currNode->next;
+        nextNode = currNode->next;
         currNode->next = prevNode;
         prevNode = currNode;
         currNode = nextNode;
