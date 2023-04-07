@@ -10,6 +10,7 @@ void reverseString(char* s, int sSize)
         swap = s[start];
         s[start] = s[end];
         s[end] = swap;
+        
         start++;
         end--;
     }
