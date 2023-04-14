@@ -4,6 +4,7 @@
 int* majorityElement(int* nums, int numsSize, int* returnSize)
 {
     int vote1 = 0, vote2 = 0, candidate1 = 0, candidate2 = 0, index = 0;
+    int *result = (int*)calloc(2, sizeof(int));
     
     while(index < numsSize)
     {
@@ -34,8 +35,6 @@ int* majorityElement(int* nums, int numsSize, int* returnSize)
         index++;
     }
     
-    int *result = (int*)calloc(2, sizeof(int));
-    
     vote1 = 0;
     vote2 = 0;
     
@@ -51,18 +50,19 @@ int* majorityElement(int* nums, int numsSize, int* returnSize)
         }
     }
     
-    index = -1;
+    index = 0;
     
     if(vote1 > numsSize / 3)
     {
-        result[++index] = candidate1;
-    }
-    if((vote2 > numsSize / 3) && (candidate1 != candidate2))
-    {
-        result[++index] = candidate2;
+        result[index++] = candidate1;
     }
     
-    *returnSize = index + 1;
+    if((vote2 > numsSize / 3) && (candidate2 != candidate1))
+    {
+        result[index++] = candidate2;
+    }
+    
+    *returnSize = index;
     
     return result;
 }
