@@ -1,15 +1,24 @@
-char * removeDuplicates(char * S){
-        char* sb = malloc(strlen(S) + 1);
-    int sbLength = 0;
-    for(int i = 0; i < strlen(S); i++) {
-        char character = S[i];
-        if (sbLength != 0 && character == sb[sbLength - 1]) {
-            sbLength--;
-        } else {
-            sb[sbLength] = character;
-            sbLength++;
+char * removeDuplicates(char * s)
+{
+    char *result = (char*)calloc(strlen(s), sizeof(char));
+    int sIndex = 0, resultIndex = 0;
+    
+    while(sIndex < strlen(s))
+    {
+        if(resultIndex != 0 && s[sIndex] == result[resultIndex - 1])
+        {
+            resultIndex--;
         }
+        else
+        {
+            result[resultIndex] = s[sIndex];
+            resultIndex++;
+        }
+        
+        sIndex++;
     }
-    sb[sbLength] = '\0';
-    return sb;
+    
+    result[resultIndex] = '\0';
+    
+    return result;
 }
