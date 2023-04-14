@@ -2,11 +2,16 @@
 
 int majorityElement(int* nums, int numsSize)
 {
-    int vote = 0, index = 0, majorElement = nums[index];
+    int vote = 0, index = 0, candidate = 0;
     
     while(index < numsSize)
     {
-        if(majorElement == nums[index])
+        if(vote == 0)
+        {
+            candidate = nums[index];
+        }
+        
+        if(candidate == nums[index])
         {
             vote++;
         }
@@ -16,12 +21,7 @@ int majorityElement(int* nums, int numsSize)
         }
         
         index++;
-        
-        if(vote == 0)
-        {
-            majorElement = nums[index];
-        }
     }
     
-    return majorElement;
+    return candidate;
 }
