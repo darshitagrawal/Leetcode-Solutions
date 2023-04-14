@@ -17,5 +17,7 @@ char * mergeAlternately(char * word1, char * word2)
         }
     }
     
+    result[resultIndex] = '\0';
+    
     return result;
 }
