@@ -1,12 +1,15 @@
 int hammingWeight(uint32_t n) 
 {
-    int sum = 0;
+    int hamWeight = 0;
     
-    while(n != 0)
+    while(n)
     {
-        n &= (n - 1);
-        sum++;
+        if(n & 1 == 1)
+        {
+            hamWeight++;
+        }
+        n >>= 1;
     }
     
-    return sum;
+    return hamWeight;
 }
