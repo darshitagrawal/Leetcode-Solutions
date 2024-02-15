@@ -9,12 +9,12 @@
 
 struct ListNode* deleteDuplicates(struct ListNode* head)
 {
+    struct ListNode *currNode = head;
+    
     if(head == NULL)
     {
-        return NULL;
+        return head;
     }
-    
-    struct ListNode *currNode = head;
     
     while(currNode->next)
     {
