@@ -9,8 +9,8 @@
 
 struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2)
 {
-    struct ListNode *prehead = (struct ListNode*)calloc(1, sizeof(struct ListNode));
-    struct ListNode *prevNode = prehead;
+    struct ListNode *preHead = (struct ListNode*)calloc(1, sizeof(struct ListNode));
+    struct ListNode *prevNode = preHead;
     
     while(list1 != NULL && list2 != NULL)
     {
@@ -24,10 +24,11 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2)
             prevNode->next = list2;
             list2 = list2->next;
         }
+        
         prevNode = prevNode->next;
     }
     
     prevNode->next = list1 == NULL ? list2 : list1;
     
-    return prehead->next;
+    return preHead->next;
 }
