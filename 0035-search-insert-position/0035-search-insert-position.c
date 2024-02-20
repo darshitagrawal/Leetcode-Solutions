@@ -1,6 +1,7 @@
 int searchInsert(int* nums, int numsSize, int target)
 {
-    int left = 0, right = numsSize - 1, middle = 0;
+    int index = 0, left = index, right = numsSize - 1;
+    int middle = 0;
     
     while(left <= right)
     {
@@ -10,7 +11,8 @@ int searchInsert(int* nums, int numsSize, int target)
         {
             return middle;
         }
-        else if(nums[middle] < target)
+        
+        if(nums[middle] < target)
         {
             left = middle + 1;
         }
