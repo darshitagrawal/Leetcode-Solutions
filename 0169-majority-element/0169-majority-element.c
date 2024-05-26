@@ -2,7 +2,7 @@
 
 int majorityElement(int* nums, int numsSize)
 {
-    int vote = 0, index = 0, candidate = 0;
+    int candidate = 0, vote = 0, index = 0;
     
     while(index < numsSize)
     {
