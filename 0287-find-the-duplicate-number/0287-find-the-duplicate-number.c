@@ -4,8 +4,8 @@ int findDuplicate(int* nums, int numsSize)
     
     do
     {
-        hare = nums[nums[hare]];
         tortoise = nums[tortoise];
+        hare = nums[nums[hare]];
     }
     while(tortoise != hare);
     
