@@ -2,7 +2,7 @@
 
 void moveZeroes(int* nums, int numsSize)
 {
-    int nzptr = 0, index = 0;
+    int index = 0, nzptr = 0;
     
     while(index < numsSize)
     {
@@ -10,6 +10,7 @@ void moveZeroes(int* nums, int numsSize)
         {
             nums[nzptr++] = nums[index];
         }
+        
         index++;
     }
     
@@ -17,6 +18,4 @@ void moveZeroes(int* nums, int numsSize)
     {
         nums[nzptr++] = 0;
     }
-    
-    return nums;
 }
