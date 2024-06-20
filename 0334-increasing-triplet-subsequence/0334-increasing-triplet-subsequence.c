@@ -21,5 +21,5 @@ bool increasingTriplet(int* nums, int numsSize)
         index++;
     }
     
-    return false;    
+    return false;
 }
