@@ -2,15 +2,14 @@
 
 int missingNumber(int* nums, int numsSize)
 {
-    int result = 0, index = 0;
+    int index = 0, actualSum = 0;
+    int expectedSum = (numsSize * (numsSize + 1)) / 2;
     
-    while(index < numsSize)
+    while(index  < numsSize)
     {
-        result ^= nums[index] ^ index;
+        actualSum += nums[index];
         index++;
     }
     
-    result ^= index;
-    
-    return result;
+    return (expectedSum - actualSum);
 }
