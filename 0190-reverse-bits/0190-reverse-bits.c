@@ -4,9 +4,10 @@ uint32_t reverseBits(uint32_t n)
     
     while(n)
     {
-        bit |= (n & 1) << power--;
+        bit |= (n & 1) << power;
+        power--;
         n >>= 1;
-    }   
+    }
     
     return bit;
 }
