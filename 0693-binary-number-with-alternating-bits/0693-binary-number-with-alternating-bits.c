@@ -1,18 +1,18 @@
 bool hasAlternatingBits(int n)
-{    
-    int cur = n & 1;
+{   
+    int currentBit = n % 2;
     
-    n >>= 1;
-
+    n = n / 2;
+    
     while(n)
     {
-        if(cur == (n & 1))
+        if(currentBit == (n % 2))
         {
             return false;
         }
         
-        cur = n & 1;
-        n >>= 1;   
+        currentBit = n % 2;
+        n /= 2;
     }
     
     return true;
