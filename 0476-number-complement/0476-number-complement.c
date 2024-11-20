@@ -7,8 +7,8 @@ int findComplement(int num)
     while(todo)
     {
         num ^= bit;   
-        bit <<= 1;
         todo >>= 1;
+        bit <<= 1;
     }
     
     return num;
