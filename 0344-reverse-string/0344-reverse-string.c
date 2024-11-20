@@ -1,15 +1,17 @@
-void reverse(char str[], int left, int right)
+void reverse(char *s, int left, int right)
 {
+    char swap = '\0';
+    
     if(left >= right)
     {
         return;
     }
     
-    char swap = str[left];
-    str[left] = str[right];
-    str[right] = swap;
+    swap = s[left];
+    s[left] = s[right];
+    s[right] = swap;
     
-    reverse(str, left + 1, right - 1);
+    reverse(s, left + 1, right - 1);
 }
 
 void reverseString(char* s, int sSize)
