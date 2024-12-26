@@ -2,17 +2,17 @@
 
 int removeDuplicates(int* nums, int numsSize)
 {
-    int insertIndex = 1, index = 1;
+    int insertIndex = 1, count = 1;
     
-    while(index < numsSize)
+    while(count < numsSize)
     {
-        if(nums[index] != nums[index - 1])
+        if(nums[count] != nums[count - 1])
         {
-            nums[insertIndex] = nums[index];
+            nums[insertIndex] = nums[count];
             insertIndex++;
         }
         
-        index++;
+        count++;
     }
     
     return insertIndex;
